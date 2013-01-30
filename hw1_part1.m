@@ -1,22 +1,16 @@
 %wrist
 %robot.j(23)
 
-
-goal = [0.14 0.8 1.4];
+goal = [0.74 -0.7 1.4];
 com_box = [.262/2 .302/2];
-
 
 f_obj = @(x)drc_obj_fun_1(x,goal);
 c_fun = @(x)drc_con_fun(x,com_box);
 
 x0 = 0.*ones(29,1);
 
-% options = optimset('Algorithm','active-set','TolFun',1e-12);
 options = optimset('Algorithm','active-set');
-% options = optimset('Algorithm','sqp');
 opt_ans = fmincon(f_obj,x0,[],[],[],[],[],[],c_fun,options);
-% opt_ans = fmincon(f_obj,x0,[],[],[],[],[],[],c_fun);
-
 
 
 drc;

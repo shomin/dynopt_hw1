@@ -8,7 +8,7 @@ box_y = box(2);
 box = [-1 1 1 -1 -1; 1 1 -1 -1 1; 0 0 0 0 0];
 
 box_opts = {'k-','LineWidth',2};
-com_opts = {'.--','MarkerSize',20,'Color',[.05 .6 .4],'LineWidth',3};
+com_opts = {'.--','MarkerSize',28,'Color',[.05 .6 .4],'LineWidth',3};
 
 if(nargin < 3)
 	h_com(1) = plot3(box(1,:).*box_x, box(2,:).*box_y, box(3,:),box_opts{:});
